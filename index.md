@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+# JS Base SDK For Kuknos Network Developement
 
-You can use the [editor on GitHub](https://github.com/KuknosOrg/public-js-sdk/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This library is the lowest-level kukos helper library. It consists
+of classes to read, write, hash, and sign the xdr structures that are used in
+kuknos-core This is an
+implementation in JavaScript that can be used on either Node.js or web browsers.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- **[API Reference](https://stellar.github.io/js-stellar-base/)**
 
-### Markdown
+> **Warning!** Node version of this package is using
+> [`sodium-native`](https://www.npmjs.com/package/sodium-native) package, a
+> native implementation of [Ed25519](https://ed25519.cr.yp.to/) in Node.js, as
+> an
+> [optional dependency](https://docs.npmjs.com/files/package.json#optionaldependencies).
+> This means that if for any reason installation of this package fails,
+> `JS SDK` will fallback to the much slower implementation contained in
+> [`tweetnacl`](https://www.npmjs.com/package/tweetnacl).
+>
+> If you are using `JS SDK` in a browser you can ignore this. However, for
+> production backend deployments you should definitely be using `sodium-native`.
+> If `sodium-native` is successfully installed and working
+> `StellarBase.FastSigning` variable will be equal `true`. Otherwise it will be
+> `false`.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Quick start
 
-```markdown
-Syntax highlighted code block
+Using npm to include kuknos-public-sdk-js in your own project:
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```shell
+npm install --save kuknos-public-sdk-js
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KuknosOrg/public-js-sdk/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## License
+kuknos-public-sdk-js is a modified version of [js-stellar-base](https://github.com/stellar/js-stellar-base) which is licensed under an Apache-2.0 license. See the
+[LICENSE](./LICENSE) file for details.
